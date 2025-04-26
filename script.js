@@ -24,12 +24,12 @@ function playGame() {
                     }
                     case "paper": {
                         message = "You lose! Paper beats rock";
-                        computerChoice++;
+                        computerScore++;
                         break;
                     }
                     case "scissors": {
                         message = "You win! Rock beats scissors";
-                        humanChoice++;
+                        humanScore++;
                         break;
                     }
                 }
@@ -39,7 +39,7 @@ function playGame() {
                 switch (computerChoice) {
                     case "rock": {
                         message = "You win! Paper beats rock";
-                        humanChoice++;
+                        humanScore++;
                         break;
                     }
                     case "paper": {
@@ -48,7 +48,7 @@ function playGame() {
                     }
                     case "scissors": {
                         message = "You lose! Scissors beats paper";
-                        computerChoice++;
+                        computerScore++;
                         break;
                     }
                 }
@@ -58,12 +58,12 @@ function playGame() {
                 switch (computerChoice) {
                     case "rock": {
                         message = "You lose! Rock beats scissors";
-                        computerChoice++;
+                        computerScore++;
                         break;
                     }
                     case "paper": {
                         message = "You win! Scissors beats paper";
-                        humanChoice++;
+                        humanScore++;
                         break;
                     }
                     case "scissors": {
@@ -76,22 +76,21 @@ function playGame() {
         }
         console.log(message);
     }
-
-
-    for (let i = 0; i++; i <=5) {
-        let humanSelection = getHumanChoice();
-        let computerSelection = getComputerChoice();
-        
-        playRound(humanSelection, computerSelection);
+    while (humanScore < 5) {
+        playRound(getHumanChoice(), getComputerChoice());
         if (humanScore === 5) {
-            console.log("You win!");
+            console.log("you win!")
             break;
-        }
-        if (computerScore === 5) {
-            console.log("You lose!");
+        } else if (computerScore === 5) {
+            console.log("you lose!")
             break;
+        }  else {
+            continue;
         }
-    }
+    }    
+    
+        
+
 
 }
 
