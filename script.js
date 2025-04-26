@@ -76,6 +76,7 @@ function playGame() {
         }
         console.log(message);
     }
+
     while (humanScore < 5) {
         playRound(getHumanChoice(), getComputerChoice());
         if (humanScore === 5) {
@@ -88,10 +89,6 @@ function playGame() {
             continue;
         }
     }    
-    
-        
-
-
 }
 
 
