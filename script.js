@@ -92,8 +92,8 @@ function playGame() {
 }
 
 const rock = document.querySelector("#rock");
-const paper = document.querySelector("paper");
-const scissors = document.querySelector("scissors");
+const paper = document.querySelector("#paper");
+const scissors = document.querySelector("#scissors");
 
 rock.addEventListener("click", () => {
     return playGame("rock");
