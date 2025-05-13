@@ -10,13 +10,13 @@ function playGame() {
 
     function getHumanChoice () { 
         let choice = prompt("rock, paper, or scissors?");
-        return choice.toUpperCase();
+        return choice.toLocaleLowerCase();
     }
 
     function playRound(humanChoice, computerChoice) {
         let message;
         switch (humanChoice) {
-            case "ROCK": {
+            case "rock": {
                 switch (computerChoice) {
                     case "rock": {
                         message = "Tie! try again";
@@ -35,7 +35,7 @@ function playGame() {
                 }
                 break;
             }
-            case "PAPER": {
+            case "paper": {
                 switch (computerChoice) {
                     case "rock": {
                         message = "You win! Paper beats rock";
@@ -54,7 +54,7 @@ function playGame() {
                 }
                 break;
             }
-            case "SCISSORS": {
+            case "scissors": {
                 switch (computerChoice) {
                     case "rock": {
                         message = "You lose! Rock beats scissors";
@@ -89,22 +89,23 @@ function playGame() {
     //         continue;
     //     }
     // }    
+    const rock = document.querySelector("#rock");
+    const paper = document.querySelector("#paper");
+    const scissors = document.querySelector("#scissors");
+
+    rock.addEventListener("click", () => {
+        playRound("rock", getComputerChoice());
+    });
+
+    paper.addEventListener("click", () => {
+        playRound("paper", getComputerChoice());
+    });
+
+    scissors.addEventListener("click", () => {
+        playRound("scissors", getComputerChoice());
+    });
 }
 
-const rock = document.querySelector("#rock");
-const paper = document.querySelector("#paper");
-const scissors = document.querySelector("#scissors");
 
-rock.addEventListener("click", () => {
-    return playGame("rock");
-});
-
-paper.addEventListener("click", () => {
-    return playGame("paper");
-});
-
-scissors.addEventListener("click", () => {
-    return playGame("scissors");
-});
 
 playGame();
