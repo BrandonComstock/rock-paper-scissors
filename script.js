@@ -1,6 +1,7 @@
 function playGame() {
     let humanScore = 0;
     let computerScore = 0;
+    const results = document.querySelector("#results");
 
     function getComputerChoice () { 
         let choices = ["rock", "paper", "scissors"];
@@ -74,7 +75,7 @@ function playGame() {
                 break;
             }
         }
-        console.log(message);
+        results.textContent = message;
     }
 
     // while (humanScore < 5) {
