@@ -3,6 +3,8 @@ function playGame() {
     let computerScore = 0;
     const results = document.querySelector("#results");
     const score = document.querySelector("#score");
+    const container = document.querySelector("#container")
+    const winResults = document.createElement("div");
 
     function getComputerChoice () { 
         let choices = ["rock", "paper", "scissors"];
@@ -78,20 +80,18 @@ function playGame() {
         }
         results.textContent = message;
         score.textContent = `You: ${humanScore} | Computer: ${computerScore}`;
+
+        if (humanScore === 5) {
+            winResults.textContent = "you win!";
+            container.appendChild(winResults);
+        } else if (computerScore === 5) {
+            winResults.textContent = "you lose";
+            container.appendChild(winResults);
+        }  
     }
 
-    // while (humanScore < 5) {
-    //     playRound(getHumanChoice(), getComputerChoice());
-    //     if (humanScore === 5) {
-    //         console.log("you win!")
-    //         break;
-    //     } else if (computerScore === 5) {
-    //         console.log("you lose!")
-    //         break;
-    //     }  else {
-    //         continue;
-    //     }
-    // }    
+        // playRound(getHumanChoice(), getComputerChoice());
+    
     const rock = document.querySelector("#rock");
     const paper = document.querySelector("#paper");
     const scissors = document.querySelector("#scissors");
