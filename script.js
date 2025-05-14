@@ -2,6 +2,7 @@ function playGame() {
     let humanScore = 0;
     let computerScore = 0;
     const results = document.querySelector("#results");
+    const score = document.querySelector("#score");
 
     function getComputerChoice () { 
         let choices = ["rock", "paper", "scissors"];
@@ -76,6 +77,7 @@ function playGame() {
             }
         }
         results.textContent = message;
+        score.textContent = `You: ${humanScore} | Computer: ${computerScore}`;
     }
 
     // while (humanScore < 5) {
